@@ -156,6 +156,32 @@ kable(table3,"html", escape = F, align = rep('c'), caption = "Iso-hyetal method 
 
 #### Calculate Catchment Discharge {#E1_12 -}
 
+<center>
+\begin{equation}
+Q = C(\text{ADR}) * \text{Area}
+(\#eq:exercise1-3)
+\end{equation}
+</center>
+
+Where $Q$ is the catchment discharge (m^3^/day), $C$ is the runoff fraction (see Table \@ref(tab:table7)), $\text{ADR}$ is the Average Depth of Rainfall (m/day), and $\text{Area}$ is the area of the catchment in m^2^.  
+
+```{r table7, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+options(kableExtra.html.bsTable = F, knitr.kable.NA = '')
+table7 <- read.csv("tables/exercise1/table7.csv", check.names=FALSE)
+kable(table7,"html", escape = F, align = rep('c', 5), caption = "Runoff fractions ($C$) for different catchment types.",
+      bootstrap_options = "hover") %>%
+  kable_styling(table7, bootstrap_options = "hover", "striped", 
+                full_width = F, position = "center",
+                font_size = 12) %>%
+  column_spec(1, width_min = "30em") %>%
+  column_spec(2, width_min = "30em") %>%
+  row_spec(1:8, background = 'white') %>%
+  scroll_box(width = "100%",
+             fixed_thead = FALSE) 
+```
+<br>
 ```{r table1, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)

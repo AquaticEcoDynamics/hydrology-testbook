@@ -24,7 +24,7 @@
 <meta name="author" content="Giles Knight, Matt Hipsey" />
 
 
-<meta name="date" content="2020-07-28" />
+<meta name="date" content="2020-07-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,7 @@ the arithmetic mean (considering only stations within the catchment boundary),
 the Thiessen polygon weighting system, and
 </li>
 <li>
-the Isohyetal method. Rainfall data for each station in the catchment is provide in Table <a href="E1-1.html#tab:table1">3</a>.
+the Isohyetal method. Rainfall data for each station in the catchment is provide in Table <a href="E1-1.html#tab:table1">4</a>.
 </li>
 </ol>
 <p>You are then required to produce an estimate of <strong>catchment runoff</strong>, which we will assume is equal to the stream <strong>discharge out of the catchment</strong> (<span class="math inline">\(Q\)</span>). Recall from lecture slides that a rough estimate of runoff may be estimated using the total rainfall over the catchment during a given period of time, and a <strong>runoff coefficient</strong>.</p>
@@ -199,7 +199,7 @@ Figure 1: A depth of rain (<span class="math inline">\(P\)</span>, mm/day) is fa
 </div>
 <div id="E1_8" class="section level3 unnumbered">
 <h3>Activity</h3>
-<p>You are given the measured data for each rainfall gauge in Table <a href="E1-1.html#tab:table2">1</a>. Calculate the arithmetic mean and write this in your summary table (Table <a href="E1-1.html#tab:table1">3</a>). Next work out the ADR based on the other two methods.</p>
+<p>You are given the measured data for each rainfall gauge in Table <a href="E1-1.html#tab:table2">1</a>. Calculate the arithmetic mean and write this in your summary table (Table <a href="E1-1.html#tab:table1">4</a>). Next work out the ADR based on the other two methods.</p>
 <p>Once we have computed ADR, we can now estimate the likely amount of runoff. Remember the relationship between rainfall and discharge as outlined in the lecture. You’ll need to choose an appropriate runoff coefficient, and calculate the stream discharge at the bottom of the catchment - rember to watch out for unit conversions! (<span style="color: red;"><b>8 marks</b></span>).</p>
 <center>
 <div class="figure"><span id="fig:image1"></span>
@@ -573,10 +573,101 @@ ADR =
 </div>
 <div id="E1_12" class="section level4 unnumbered">
 <h4>Calculate Catchment Discharge</h4>
+<center>
+<span class="math display" id="eq:exercise1-3">\[\begin{equation}
+Q = C(\text{ADR}) * \text{Area}
+\tag{3}
+\end{equation}\]</span>
+</center>
+<p>Where <span class="math inline">\(Q\)</span> is the catchment discharge (m<sup>3</sup>/day), <span class="math inline">\(C\)</span> is the runoff fraction (see Table <a href="E1-1.html#tab:table7">3</a>), <span class="math inline">\(\text{ADR}\)</span> is the Average Depth of Rainfall (m/day), and <span class="math inline">\(\text{Area}\)</span> is the area of the catchment in m<sup>2</sup>.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:table1">Table 3: </span>ADR and catchment discharge using three different rainfall averaging methods.
+<span id="tab:table7">Table 3: </span>Runoff fractions (<span class="math inline">\(C\)</span>) for different catchment types.
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Catchment Type
+</th>
+<th style="text-align:center;">
+Runoff fraction (<span class="math inline">\(C\)</span>)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+Deep sands
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.05
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+Loams or well structured clays
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+Not more than 50% cultivation or open woodlands
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+Soil with poor infiltration
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.20
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+No effective plant cover
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+No effective soil cover
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+Steep rugged slopes above 20% angle
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.30
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+Urban, residential
+</td>
+<td style="text-align:center;min-width: 30em; background-color: white !important;">
+0.40
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:table1">Table 4: </span>ADR and catchment discharge using three different rainfall averaging methods.
 </caption>
 <thead>
 <tr>
@@ -701,7 +792,7 @@ How would you describe the seasonal pattern of rainfall (hint look at the climat
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:515px; overflow-x: scroll; width:100%; ">
 <table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:table4">Table 4: </span>Bureau of Meteorology Automatic Weather Station data and station ID across WA and SWWA. Complete the table for each site.
+<span id="tab:table4">Table 5: </span>Bureau of Meteorology Automatic Weather Station data and station ID across WA and SWWA. Complete the table for each site.
 </caption>
 <thead>
 <tr>
@@ -1141,7 +1232,7 @@ Narrogin
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:515px; overflow-x: scroll; width:100%; ">
 <table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:table5">Table 5: </span>Bureau of Meteorology Automatic Weather Station data and station ID across WA and SWWA. Complete the table for each site.
+<span id="tab:table5">Table 6: </span>Bureau of Meteorology Automatic Weather Station data and station ID across WA and SWWA. Complete the table for each site.
 </caption>
 <thead>
 <tr>
@@ -1644,7 +1735,7 @@ Narrogin
 <center>
 <span class="math display" id="eq:exercise-3">\[\begin{equation}
 \text{SOI} = 10 \frac{P_{\text{diff}} - P_{\text{diffav}}}{SD(P_{\text{diff}})}
-\tag{3}
+\tag{4}
 \end{equation}\]</span>
 </center>
 <p>Where:</p>
@@ -1661,7 +1752,7 @@ Narrogin
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:table6">Table 6: </span>Rainfall and climate indices (DMI for IOD and SOI for ENSO) correlations (<span style="color:red"><b>1 mark</b></span>).
+<span id="tab:table6">Table 7: </span>Rainfall and climate indices (DMI for IOD and SOI for ENSO) correlations (<span style="color:red"><b>1 mark</b></span>).
 </caption>
 <thead>
 <tr>

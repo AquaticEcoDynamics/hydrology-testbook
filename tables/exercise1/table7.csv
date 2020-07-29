@@ -1,0 +1,9 @@
+﻿Catchment Type,Runoff fraction ($C$)
+Deep sands,0.05
+Loams or well structured clays,0.1
+Not more than 50% cultivation or open woodlands,0.1
+Soil with poor infiltration,0.2
+No effective plant cover,0.25
+No effective soil cover,0.25
+Steep rugged slopes above 20% angle,0.3
+"Urban, residential",0.4
